@@ -5,19 +5,26 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": " tsx watch src/server.ts"
+    "dev": " tsx watch src/server.ts",
+    "knex": "tsx ./node_modules/knex/bin/cli.js",
+    "migrate:make": "npm run knex -- migrate:make",
+    "migrate:latest": "npm run knex -- migrate:latest",
+    "migrate:rollback": "npm run knex -- migrate:rollback"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/node": "^25.2.3",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
-    "fastify": "^5.7.4",
+    "dotenv": "^17.2.4",
+    "fastify": "^4.29.1",
     "knex": "^3.1.0",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "zod": "^4.3.6"
   }
 }
